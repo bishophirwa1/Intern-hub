@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started - Intern Hub</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body,
+        html {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* BACKGROUND SLIDER */
+        .bg-slider {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+
+        .bg.active {
+            opacity: 1;
+        }
+
+        .bg::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* CARD */
+        .card {
+            width: 100%;
+            max-width: 650px;
+            padding: 50px;
+            border-radius: 25px;
+            text-align: center;
+            color: white;
+
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            width: 130px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #f1f1f1;
+            margin-bottom: 35px;
+        }
+
+        .btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btns button {
+            width: 180px;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .login-btn {
+            background: white;
+            color: #222;
+        }
+
+        .signup-btn {
+            background: #2b7a78;
+            color: white;
+        }
+
+        .login-btn:hover {
+            background: black;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .signup-btn:hover {
+            background: #0d4745;
+            transform: scale(1.05);
+        }
+
+        .back-home {
+            margin-top: 30px;
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .back-home:hover {
+            color: #8df5f0;
+            text-decoration: underline;
+        }
+
+        @media(max-width:700px) {
+            .card {
+                padding: 35px 20px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .btns button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- BACKGROUND IMAGES -->
+    <div class="bg-slider">
+        <div class="bg active" style="background-image: url('building.jpg');"></div>
+        <div class="bg" style="background-image: url('coding.jpg');"></div>
+        <div class="bg" style="background-image: url('cooking.jpg');"></div>
+        <div class="bg" style="background-image: url('electricians.jpg');"></div>
+        <div class="bg" style="background-image: url('toraa.jpg');"></div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="container">
+
+        <div class="card">
+
+            <img src="logo.png" alt="Logo" class="logo">
+
+            <h1>Get Started</h1>
+
+            <p>
+                Welcome to <b>Intern Hub</b>.  
+                To explore internships, apply for opportunities, and receive updates,
+                please Login to your account or create a new account to continue.
+            </p>
+
+            <div class="btns">
+
+                <button class="login-btn"
+                    onclick="window.location.href='Login form 2.html'">
+                    Login
+                </button>
+
+                <button class="signup-btn"
+                    onclick="window.location.href='sign up.html'">
+                    Sign Up
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const backgrounds = document.querySelectorAll('.bg');
+        let index = 0;
+
+        function changeBackground() {
+            backgrounds[index].classList.remove('active');
+
+            index = (index + 1) % backgrounds.length;
+
+            backgrounds[index].classList.add('active');
+        }
+
+        setInterval(changeBackground, 5000);
+    </script>
+
+</body>
+
+</html>

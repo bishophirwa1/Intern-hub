@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login form </title>
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #ffffff;
+        scroll-behavior: smooth;
+    }
+
+
+    #whole {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 27px;
+    }
+
+    #body {
+        width: 300px;
+        text-align: center;
+        border: 1px none red;
+        background: linear-gradient(to right, #6c7c7c, #aabbbb);
+        border-radius: 10px;
+        padding: 15px;
+        background: rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+
+    #ps {
+        width: 300px;
+        height: 50px;
+        border: 1px none red;
+        background: #ffffff;
+        border-radius: 5px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family:
+            "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+            Arial, sans-serif;
+
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background: rgb(0, 0, 0);
+        color: #fffefe;
+    }
+
+    button:hover {
+        background: white;
+        color: black;
+        font-weight: bold;
+    }
+
+    img {
+        position: relative;
+        width: 300px;
+        gap: 300px;
+    }
+
+    a {
+        font-weight: bold;
+        text-decoration: none;
+        color: blue;
+        cursor: pointer;
+    }
+
+    a:hover {
+        color: rgb(126, 126, 155);
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    b {
+        color: rgb(255, 255, 255);
+    }
+
+    footer {
+        border-radius: 10px;
+        background: #324041;
+        color: #ecf0f1;
+        padding: 40px 20px;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 30px;
+    }
+
+    .footer-container h4 {
+        margin-bottom: 15px;
+        font-size: 18px;
+        border-bottom: 2px solid #555;
+        padding-bottom: 8px;
+    }
+
+    .footer-container ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-container ul li {
+        margin: 8px 0;
+    }
+
+    .footer-container a {
+        color: #ecf0f1;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .footer-container a:hover {
+        color: #1abc9c;
+        padding-left: 5px;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .social-icons img {
+        width: 28px;
+        transition: 0.3s;
+    }
+
+    .social-icons img:hover {
+        transform: scale(1.2);
+    }
+
+    .top-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+        padding: 8px 14px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        background: #141414;
+        color: white;
+    }
+
+    .top-btn:hover {
+        background-color: white;
+        color: black;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    }
+
+    .copyright {
+        text-align: center;
+        margin-top: 40px;
+        border-top: 1px solid #555;
+        padding-top: 15px;
+        font-size: 14px;
+    }
+
+    .bg-slider {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: opacity 2s ease-in-out;
+    }
+
+    .bg.active {
+        opacity: 1;
+    }
+
+    .content {
+
+        z-index: 1;
+        color: white;
+        text-align: center;
+    }
+
+    .bg::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+    }
+</style>
+
+<body>
+    <div class="bg-slider">
+        <div class="bg active" style="background-image: url('building.jpg');"></div>
+        <div class="bg" style="background-image: url('cooking.jpg');"></div>
+        <div class="bg" style="background-image: url('coding.jpg');"></div>
+        <div class="bg" style="background-image: url('electricians.jpg');"></div>
+        <div class="bg" style="background-image: url('toraa.jpg');"></div>
+        <div class="bg" style="background-image: url('torr.jpg');"></div>
+    </div>
+    <div class="content">
+        <div id="whole">
+            <img src="logo.png" alt="logo" />
+            <div id="body">
+                <h1 style="text-align: center; color: #ffffff">Login form</h1>
+                <b>Username:</b>
+                <input type="text" id="ps" placeholder="Enter Your Name or Email" required />
+                <br />
+                <br />
+                <b> Password:</b>
+                <input type="password" id="ps" placeholder="Enter Password" required />
+                <br />
+                <br />
+                <input type="checkbox" />
+                <b>Forgot Password</b>
+                <br />
+                <br />
+                <button type="button" onclick="window.location.href='Oral.html'">Log In</button>
+                <br />
+                <br />
+                <h4>Don't have an account <a href="sign up.html">Register</a></h4>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div>
+                    <h4>Follow us</h4>
+                    <div class="social-icons">
+                        <a href="#"><img src="facebook.png" alt="" /></a>
+                        <a href="#"><img src="twitter.png" alt="" /></a>
+                        <a href="#"><img src="instagram.png" alt="" /></a>
+                        <a href="#"><img src="youtube.png" alt="" /></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Sections</h4>
+                    <ul>
+                        <li><a href="#">Computer System and Architecture</a></li>
+                        <li><a href="#">Software development</a></li>
+                        <li><a href="#">Multimedia Production</a></li>
+                        <li><a href="#">Foods and Beverages</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Contact</h4>
+                    <p>Email: Intern Hub@gmail.com</p>
+                    <p>Phone: +250796700559</p>
+                    <p>Kigali, Rwanda</p>
+                </div>
+
+                <div>
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">services</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Who we are</a></li>
+                    </ul>
+
+                    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="top-btn">
+                        Back to top
+                    </button>
+                </div>
+            </div>
+
+            <div class="copyright">&copy; 2026 Intern Hub. All rights reserved.</div>
+        </footer>
+    </div>
+</body>
+<script>
+    const backgrounds = document.querySelectorAll('.bg');
+    let index = 0;
+
+    function changeBackground() {
+        backgrounds[index].classList.remove('active');
+        index = (index + 1) % backgrounds.length;
+        backgrounds[index].classList.add('active');
+    }
+
+    setInterval(changeBackground, 5000); 
+</script>
+
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Internships | Intern Hub</title>
+
+<style>
+body, html{
+    margin:0;
+    height:100%;
+    font-family: Arial, sans-serif;
+    color:white;
+}
+
+/* SAME BACKGROUND SLIDER STYLE */
+.bg-slider{
+    position:fixed;
+    top:0;left:0;
+    width:100%;height:100%;
+    z-index:-1;
+}
+.bg{
+    position:absolute;
+    width:100%;height:100%;
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    transition:opacity 2s ease-in-out;
+}
+.bg.active{ opacity:1; }
+.bg::after{
+    content:"";
+    position:absolute;
+    width:100%;height:100%;
+    background:rgba(0,0,0,0.5);
+}
+
+/* CONTENT */
+.container{
+    padding:40px 8%;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.15);
+    padding:15px 25px;
+    border-radius:10px;
+}
+
+header h2{ margin:0; }
+
+.back-btn{
+    padding:8px 15px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.title{
+    text-align:center;
+    margin:40px 0;
+    font-size:40px;
+}
+
+/* INTERNSHIP CARDS */
+.grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    border-radius:12px;
+    padding:20px;
+    transition:0.3s;
+}
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{ margin-top:0; }
+
+.card button{
+    margin-top:15px;
+    padding:10px;
+    border:none;
+    border-radius:6px;
+    background:#2b7a78;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+.card button:hover{
+    background:#063635;
+}
+
+footer{
+    margin-top:60px;
+    text-align:center;
+    opacity:0.8;
+}
+</style>
+</head>
+<body>
+
+<!-- Background slider -->
+<div class="bg-slider">
+    <div class="bg active" style="background-image:url('building.jpg')"></div>
+    <div class="bg" style="background-image:url('coding.jpg')"></div>
+    <div class="bg" style="background-image:url('cooking.jpg')"></div>
+    <div class="bg" style="background-image:url('electricians.jpg')"></div>
+</div>
+
+<div class="container">
+    <header>
+        <h2>Intern Hub Opportunities</h2>
+        <button class="back-btn" onclick="history.back()">⬅ Back</button>
+    </header>
+
+    <div class="title">Available Internship Fields</div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Software Development</h3>
+            <p>Work with modern technologies and build real applications.</p>
+            <button>Apply Now</button>
+        </div>
+
+        <div class="card">
+            <h3>Construction & Public Works</h3>
+            <p>Hands-on experience on construction sites and surveying.</p>
+            <button>Apply Now</button>
+        </div>
+
+        <div class="card">
+            <h3>Hospitality & Tourism</h3>
+            <p>Learn hotel operations, food services and tourism management.</p>
+            <button>Apply Now</button>
+        </div>
+
+        <div class="card">
+            <h3>Electrical & Renewable Energy</h3>
+            <p>Practical training in electrical systems and solar energy.</p>
+            <button>Apply Now</button>
+        </div>
+
+        <div class="card">
+            <h3>Agriculture & Food Processing</h3>
+            <p>Modern agriculture techniques and food production training.</p>
+            <button>Apply Now</button>
+        </div>
+
+        <div class="card">
+            <h3>Multimedia & Networking</h3>
+            <p>Video editing, design, networking and IT infrastructure.</p>
+            <button>Apply Now</button>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Intern Hub — Kigali, Rwanda
+    </footer>
+</div>
+
+<script>
+const backgrounds = document.querySelectorAll('.bg');
+let index = 0;
+
+function changeBackground(){
+    backgrounds[index].classList.remove('active');
+    index = (index + 1) % backgrounds.length;
+    backgrounds[index].classList.add('active');
+}
+
+setInterval(changeBackground,5000);
+</script>
+
+</body>
+</html>

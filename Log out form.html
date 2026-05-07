@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Logout</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial, Helvetica, sans-serif;
+    background:url('coding.jpg') no-repeat center/cover;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.5);
+    backdrop-filter:blur(8px);
+}
+
+.logout-box{
+    position:relative;
+    z-index:2;
+    width:350px;
+    padding:30px;
+    text-align:center;
+    color:white;
+    border-radius:12px;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(12px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.logout-box h2{
+    margin-bottom:10px;
+}
+
+.logout-box p{
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+}
+
+button{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.cancel{
+    background:#7f8c8d;
+    color:white;
+}
+
+.cancel:hover{
+    background:#95a5a6;
+}
+
+.logout{
+    background:#c0392b;
+    color:white;
+}
+
+.logout:hover{
+    background:#e74c3c;
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="logout-box">
+    <h2>Confirm Logout</h2>
+    <p>Are you sure you want to log out from Intern Hub?</p>
+
+    <div class="buttons">
+        <button class="cancel" onclick="window.location.href='Oral.html'">Cancel</button>
+        <button class="logout" onclick="window.location.href='main page .html'">Log Out</button>
+    </div>
+</div>
+
+</body>
+</html>
