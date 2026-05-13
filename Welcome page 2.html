@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opportunity Posted</title>
+
+    <style>
+        body{
+            margin:0;
+            height:100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            color:white;
+            text-align:center;
+            overflow:hidden;
+        }
+
+        .card{
+            position: relative;
+            z-index: 1;
+            background: rgba(0,0,0,0.35);
+            backdrop-filter: blur(12px);
+            padding:40px;
+            border-radius:10px;
+            top:50%;
+            transform: translateY(-50%);
+            width:320px;
+            margin:auto;
+        }
+
+        button{
+            margin-top:20px;
+            padding:10px 20px;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            font-weight:bold;
+            background:#00c853;
+            color:white;
+        }
+
+        .bg-slider {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+
+        .bg.active {
+            opacity: 1;
+        }
+
+        .bg::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        h1{ margin-bottom:10px; }
+        p{ margin:5px 0; }
+    </style>
+</head>
+<body>
+
+    <!-- Background Images -->
+    <div class="bg-slider">
+        <div class="bg active" style="background-image: url('building.jpg');"></div>
+        <div class="bg" style="background-image: url('cooking.jpg');"></div>
+        <div class="bg" style="background-image: url('coding.jpg');"></div>
+        <div class="bg" style="background-image: url('electricians.jpg');"></div>
+        <div class="bg" style="background-image: url('toraa.jpg');"></div>
+        <div class="bg" style="background-image: url('torr.jpg');"></div>
+    </div>
+
+    <!-- Success Card -->
+    <div class="card">
+        <h1 Opportunity Posted!</h1>
+        <p id="orgText"></p>
+        <p>Your opportunity , being processed by the Intern hub staff.</p>
+        <button onclick="goExplore()">Back to Explore</button>
+    </div>
+
+    <script>
+        const orgName = localStorage.getItem("orgName");
+
+        if(orgName){
+            document.getElementById("orgText").innerText =
+                "Organisation: " + orgName;
+        }
+
+        function goExplore(){
+            window.location.href = "Oral.html";
+        }
+
+        // Background slider
+        const backgrounds = document.querySelectorAll('.bg');
+        let index = 0;
+
+        function changeBackground() {
+            backgrounds[index].classList.remove('active');
+            index = (index + 1) % backgrounds.length;
+            backgrounds[index].classList.add('active');
+        }
+
+        setInterval(changeBackground, 5000);
+    </script>
+
+</body>
+</html>
